@@ -1,0 +1,16 @@
+{
+  "name": "astro-6-4-4-popover-persist-bug",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "6.4.4",
+    "@astrojs/cloudflare": "^10.0.2"
+  }
+}

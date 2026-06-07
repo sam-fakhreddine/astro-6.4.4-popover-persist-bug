@@ -1,0 +1,43 @@
+---
+import { ClientRouter } from "astro:transitions";
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Astro Popover Persist Bug (Index)</title>
+    <ClientRouter />
+    <style>
+      header {
+        background: #eee;
+        padding: 1rem;
+        border-bottom: 2px solid #ccc;
+      }
+      body {
+        font-family: sans-serif;
+      }
+      #my-popover {
+        padding: 1rem;
+        background: white;
+        border: 1px solid black;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <header transition:persist="header-nav">
+      <h2>Persistent Header</h2>
+      <button popovertarget="my-popover">Open Popover</button>
+      <div id="my-popover" popover>
+        <p>This is a native popover element inside a persistent header.</p>
+        <button popovertarget="my-popover" popovertargetaction="hide">Close</button>
+      </div>
+    </header>
+    
+    <main>
+      <h1>Index Page</h1>
+      <p>Navigate to the About page below. Notice the header completely vanishes when you click the link.</p>
+      <a href="/about/">Go to About Page</a>
+    </main>
+  </body>
+</html>
